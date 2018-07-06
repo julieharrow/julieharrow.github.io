@@ -15,8 +15,9 @@
 			(function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
 				v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
 					o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
-				y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
-				z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+				y=e.createElement(n);y.async=!0;y.src='https://pendo-magic-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+				z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo')
+
 
 			var url = window.location.search;
 			var queryString = {};
@@ -30,17 +31,17 @@
 
 			pendo.initialize({
 				visitor: {
-					id: queryString.visitor || data.ip
+					id: queryString.visitor || (new Date()).getTime()
 				},
-				apiKey: 'f8e9beb2-7c42-4da5-73fc-e7787e418370',
-                account: {
+				apiKey: '8e9b8af7-a479-45b9-481d-41231635b942',
+				account: {
                     id: 12345,
                     city: 'Raleigh',
                     zipCode: '27601'
-                }
+				}
 			});
 
-		})('f8e9beb2-7c42-4da5-73fc-e7787e418370');
+		})('8e9b8af7-a479-45b9-481d-41231635b942');
     </script>
   </head>
   <body>
@@ -111,13 +112,13 @@
     </ul>
     <ul class="nav navbar-nav navbar-primary">
       <li>
-        <a href="index.html">Dashboard</a>
+        <a href="magic-index.html">Dashboard</a>
       </li>
       <li class="active">
-        <a href="list.html">List View</a>
+        <a href="magic-list.html">List View</a>
       </li>
       <li>
-        <a href="empty.html">Empty State</a>
+        <a href="magic-empty.html">Empty State</a>
       </li>
     </ul>
   </div>
@@ -129,10 +130,10 @@
       <a href="#">Back to Top Level</a>
     </li>
     <li>
-      <a href="card.html" title="Card view">Second Level</a>
+      <a href="magic-card.html" title="Card view">Second Level</a>
     </li>
     <li>
-      <a href="list.html" title="List view">Third Level</a>
+      <a href="magic-list.html" title="List view">Third Level</a>
     </li>
     <li class="active"> <strong>Fourth Level:</strong>
       Detail about fourth level

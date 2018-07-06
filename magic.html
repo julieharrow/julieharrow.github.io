@@ -33,18 +33,16 @@
 				}
 			);
 
-			$.getJSON('//freegeoip.net/json/?callback=?', function (data) {
-				pendo.initialize({
-					visitor: {
-						id: queryString.visitor || data.ip
-					},
-					apiKey: '8e9b8af7-a479-45b9-481d-41231635b942',
-					account: {
-						id: data['metro_code'],
-						city: data.city,
-						zipCode: data['zip_code']
-					}
-				});
+			pendo.initialize({
+				visitor: {
+					id: queryString.visitor || (new Date()).getTime()
+				},
+				apiKey: '8e9b8af7-a479-45b9-481d-41231635b942',
+				account: {
+                    id: 12345,
+                    city: 'Raleigh',
+                    zipCode: '27601'
+				}
 			});
 
 		})('8e9b8af7-a479-45b9-481d-41231635b942');
@@ -118,13 +116,13 @@
     </ul>
     <ul class="nav navbar-nav navbar-primary">
       <li class="active">
-        <a href="index.html">Dashboard</a>
+        <a href="magic.html">Dashboard</a>
       </li>
       <li>
-        <a href="list.html">List View</a>
+        <a href="magic-list.html">List View</a>
       </li>
       <li>
-        <a href="empty.html">Empty State</a>
+        <a href="magic-empty.html">Empty State</a>
       </li>
     </ul>
   </div>
